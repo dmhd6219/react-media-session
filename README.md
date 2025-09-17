@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+# react-media-session [![version](https://img.shields.io/npm/v/@dmhd6219/react-media-session)](https://www.npmjs.com/package/@dmhd6219/react-media-session) [![license](https://img.shields.io/npm/l/@dmhd6219/react-media-session)](https://github.com/dmhd6219/react-media-session/blob/main/LICENSE)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The React hook that wraps [Media Session API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API).
 
-Currently, two official plugins are available:
+# Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install --save @dmhd6219/react-media-session
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```jsx
+import { useMediaSession } from '@dmhd6219/react-media-session';
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
+const Component = () => {
+  // ...
+
+  useMediaSession({
+    title: 'in a zamay7 F2024',
+    artist: 'LeonidM',
+    album: 'LeonidM',
+    artwork: [
+      {
+        src: 'https://api.smashup.ru/uploads/mashup/816_800x800.png',
+        sizes: '256x256,384x384,512x512',
+        type: 'image/jpeg',
       },
-      // other options...
-    },
-  },
-])
+      {
+        src: 'https://api.smashup.ru/uploads/mashup/816_100x100.png',
+        sizes: '96x96,128x128,192x192',
+        type: 'image/jpeg',
+      },
+    ],
+    onPlay,
+    onPause,
+    onSeekBackward,
+    onSeekForward,
+    onPreviousTrack,
+    onNextTrack,
+  });
+
+  // ...
+};
 ```
+
+# Screenshots
+
+## Desktop
+![](assets/Screenshot_1.png)
+
+## Mobile
+![](assets/Screenshot_20250917_105521_Settings.jpg)
+
+# Docs
+
+Available content:
+* `MEDIA_SESSION_SUPPORTED` constant
+* `useMediaSession` hook
+
+    props:
+    ```
+    {
+        title?: string;
+        artist?: string;
+        album?: string;
+        artwork: { src: string, sizes: string, type?: string }[];
+        
+        onNextTrack: function;
+        onPause: function;
+        onPlay: function;
+        onPreviousTrack: function;
+        onSeekBackward: function;
+        onSeekForward: function;
+        onSeekTo: function;
+        onSkipAd: function;
+        onStop: function;
+    }
+    ```
