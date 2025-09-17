@@ -1,4 +1,4 @@
-# react-media-session [![version](https://img.shields.io/npm/v/@dmhd6219/react-media-session)](https://www.npmjs.com/package/@dmhd6219/react-media-session) [![license](https://img.shields.io/npm/l/@dmhd6219/react-media-session)](https://github.com/dmhd6219/react-media-session/blob/main/LICENSE)
+# @dmhd6219/react-media-session [![version](https://img.shields.io/npm/v/@dmhd6219/react-media-session)](https://www.npmjs.com/package/@dmhd6219/react-media-session) [![license](https://img.shields.io/npm/l/@dmhd6219/react-media-session)](https://github.com/dmhd6219/react-media-session/blob/main/LICENSE)
 
 The React hook that wraps [Media Session API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API).
 
