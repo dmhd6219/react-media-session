@@ -1,20 +1,50 @@
 {
   "name": "react-media-session",
-  "private": true,
-  "version": "0.0.0",
+  "description": "The react component that wraps MediaSession.",
+  "author": "dmhd6219",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "component",
+    "mediaSession",
+    "media",
+    "session",
+    "audio",
+    "player"
+  ],
+  "bugs": {
+    "url": "https://github.com/dmhd6219/react-media-session/issues"
+  },
+  "homepage": "https://github.com/dmhd6219/react-media-session#readme",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "vite-plugin-dts": "^4.5.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@types/node": "^24.5.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react-swc": "^4.0.0",
